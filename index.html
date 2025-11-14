@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="header">
+            <div class="dashboard"><h1>Royal Dashboard</h1></div>
+            <div class="input"><input type="text" placeholder="Cari Kelas, Dokumen, Aktifitas dll..."></div>
+        </div>
+
+
+        <div class="main">
+            <div class="nama"><h1 id="selamat">Selamat Datang, Nama Mahasiswa Kelas SI-3X</h1><p>Kamu memiliki Statistik, 3 Proges Kelas, 4 Ktifitas Selanjutnya dan 3 Lampiran Dokumen yang ada pada aplikasi ini.</p></div>
+            <div class="gambar"><img src="Assets/avatar.png" alt=""></img></div>
+        </div>
+
+        <div class="nav">
+            <div class="menu">
+            <ul>
+                <li><a href="#" onclick="home()">Home</a></li>
+                <li><a href="#" onclick="mahasiswa()">Mahasiswa</a></li>
+                <li><a href="#" onclick="kelas()">Kelas</a></li>
+                <li><a href="#" onclick="aktifitas()">Aktifitas</a></li>
+                <li><a href="#" onclick="statistik()">Statistik</a></li>
+                <li><a href="#" onclick="dokumen()">Dokumen</a></li>
+                <li><a class="sett" href="#" id="settings" onclick="settings()">Settings</a></li>
+                <li><a class="signo" href="#" id="signout" onclick="signout()"singout>Sign Out</a></li>
+            </ul>
+            </div>
+        </div>
+
+
+        <div class="aside" id="aside">
+            <div><h3>Statistik Mahasiswa</h3></div>
+            <div class="gambar-statistik"><img src="Assets/Chart.svg" alt=""></div>
+        </div>
+
+
+        <div class="section1" id="aktifi">
+            <h3>Progres Kelas</h3>
+            <div class="progres">
+                <h6>Matakuliah A</h6>
+                <p>78 Pendaftar</p>
+            </div>
+
+            <div class="progres">
+                <h6>Matakuliah B</h6>
+                <p>30 Pendaftar</p>
+            </div>
+
+            <div class="progres">
+                <h6>Matakuliah C</h6>
+                <p>40 Pendaftar</p>
+            </div>
+
+            <div class="progres">
+                <h6>Matakuliah D</h6>
+                <p>10 Pendaftar</p>
+            </div>
+        </div>
+
+
+        <div class="section2" id="aktifi1">
+            <h3>Aktifitas Selanjutnya</h3>
+             <div class="progres">
+                <h6>Perkuliahan Daring 1</h6>
+                <p>Senin, 15 Januari 2025</p>
+            </div>
+
+            <div class="progres">
+                <h6>Perkuliahan Daring 1</h6>
+                <p>Selasa, 15 Februari 2025</p>
+            </div>
+
+            <div class="progres">
+                <h6>Perkuliahan Daring 1</h6>
+                <p>Rabu, 15 Maret 2025</p>
+            </div>
+
+            <div class="progres">
+                <h6>Perkuliahan Daring 1</h6>
+                <p>Kamis, 15 April 2025</p>
+            </div>
+        </div>
+
+
+        <div class="footer" id="lmpr">
+            <h3>Lampiran</h3>
+            <div class="lampiran">
+                <p>
+                    <span id="lampir">Lampiran Dokumen 1</span> - Matakuliah A | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
+                </p>
+            </div>
+
+            <div class="lampiran" >
+                <p>
+                    <span id="lampir">Lampiran Dokumen 2</span> - Matakuliah B | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
+                </p>
+            </div>
+
+            <div class="lampiran">
+                <p>
+                    <span id="lampir">Lampiran Dokumen 3</span> - Matakuliah C | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
+                </p>
+            </div>
+        </div>
+    </main> 
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

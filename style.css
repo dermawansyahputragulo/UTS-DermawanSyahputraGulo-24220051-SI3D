@@ -1,0 +1,246 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+
+body{
+    padding: 30px;
+    background-color: #e8f3ff;
+    zoom: 100%;
+}
+
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+    grid-template-rows: 0.2fr 0.6fr 1.5fr 0.5fr;
+    gap: 20px;
+    grid-template-areas:
+    'header header header header'
+    'nav main main main'
+    'nav aside section1 section2'
+    'nav footer footer footer'
+    ;
+}
+
+.header {grid-area: header;}
+.main {grid-area: main;}
+.nav  {grid-area: nav;}
+.aside {grid-area: aside;}
+.section1 {grid-area: section1;}
+.section2 {grid-area: section2;}
+.footer {grid-area: footer;}
+
+
+.header {
+    margin-bottom: 10px;
+}
+
+.main{
+    background-color: #0052b4;
+}
+
+.nav{
+    background-color: #0052b4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.aside {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.section1{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.section2 {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    background-color: white ;
+}
+
+
+
+/* header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+ 
+}
+
+.dashboard h1 {
+    font-size: 20px bold;
+    color: #325987;
+
+}
+
+.input input {
+    width: 300px;
+    border-radius: 10px;
+    border: 1px #73a1d7 solid;
+    padding: 10px;
+
+    
+}
+
+.input input, ::placeholder{
+    text-align: center;
+}
+
+/* main */
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nama {
+    padding: 20px;
+    
+}
+
+.nama h1 {
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+}
+
+.nama p {
+    color:white;
+    margin: 30px auto auto auto;
+}
+
+.gambar {
+    padding: 30px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+.gambar img { 
+    width: 80px;
+    border-radius: 40px;
+    border: 3px white solid;
+}
+
+.nama p{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+
+/* nav */
+
+.menu {
+    margin-top: 40px;
+    font-weight: bold;
+ 
+}
+.menu ul li{
+    list-style: none;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color:white;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin-top: 15px;
+ 
+}
+
+.menu ul li .signo {
+    text-decoration: none;
+    color: orange;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.menu ul li .sett {
+    text-decoration: none;
+    color: #0fe3ff;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.menu ul li a:hover{
+    background-color: #0e3b72;
+}
+
+/* aside */
+.aside h3{
+    padding: 10px;
+}
+
+.aside img{
+    padding: 10px;
+    margin: 30px;
+    width: 400px;
+}
+
+
+/* section1 */
+.progres {
+    padding: 20px;
+    background-color: #f0f7ff;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.progres h6{
+    font-size: 15px;
+}
+
+.progres p {
+    font-size: 15px;
+    color: #3375c4;
+    margin-top: 3px;
+}
+
+.section1 h3{
+    padding: 10px;
+}
+
+/* section2 */
+.section2 h3{
+    padding: 10px;
+}
+
+.section2 p {
+   font-weight: bold;
+}
+
+
+/* footer */
+.footer h3{
+    padding: 10px;
+}
+
+.lampiran p {
+    padding: 20px;
+    background-color: #f0f7ff;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#dokumen{
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+#lampir{
+    font-weight: bold;
+}
