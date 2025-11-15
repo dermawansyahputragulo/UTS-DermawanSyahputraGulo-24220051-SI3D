@@ -36,11 +36,11 @@ document.getElementById("reload").addEventListener("click", function () {
 });
 
 document.getElementById("exit").addEventListener("click", function () {
-  window.close(); // coba tutup tab
+  window.close();
 });
 
 function home(){
-    document.getElementById('selamat').innerHTML="Selamat Datang, Nama Mahasiswa Kelas SI-3X";
+    document.getElementById('selamat').innerHTML="Selamat Datang, Nama Mahasiswa<br>Kelas SI-3X";
     document.getElementById('progres-kelas-content').style.backgroundColor="white";
     document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
     document.getElementById('aside').style.backgroundColor="white";
@@ -52,7 +52,7 @@ function mahasiswa () {
 }
 
 function kelas() {
-    document.getElementById('selamat').innerHTML="Selamat Datang, Dermawan Syahputra Gulo Kelas SI-3D";
+    document.getElementById('selamat').innerHTML="Selamat Datang, Dermawan Syahputra Gulo<br>Kelas SI-3D";
 }
 
 function aktifitas(){
@@ -79,7 +79,7 @@ function dokumen(){
 }
 
 function signout(){
-    document.getElementById('selamat').innerHTML="Selamat Datang, Nama Mahasiswa Kelas";
+    document.getElementById('selamat').innerHTML="Selamat Datang, Nama Mahasiswa<br>Kelas SI-3X";
     document.getElementById('progres-kelas-content').style.backgroundColor="white";
     document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
     document.getElementById('aside').style.backgroundColor="white";
