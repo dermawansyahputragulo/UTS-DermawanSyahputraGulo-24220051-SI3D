@@ -78,7 +78,7 @@ function dokumen(){
     document.getElementById('aside').style.backgroundColor="white";
 }
 
-function singout(){
+function signout(){
     document.getElementById('selamat').innerHTML="Selamat Datang, Nama Mahasiswa Kelas";
     document.getElementById('progres-kelas-content').style.backgroundColor="white";
     document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
