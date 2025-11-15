@@ -12,13 +12,10 @@
             <div class="dashboard"><h1>Royal Dashboard</h1></div>
             <div class="input"><input type="text" placeholder="Cari Kelas, Dokumen, Aktifitas dll..."></div>
         </div>
-
-
         <div class="main">
             <div class="nama"><h1 id="selamat">Selamat Datang, Nama Mahasiswa Kelas SI-3X</h1><p>Kamu memiliki Statistik, 3 Proges Kelas, 4 Ktifitas Selanjutnya dan 3 Lampiran Dokumen yang ada pada aplikasi ini.</p></div>
             <div class="gambar"><img src="Assets/avatar.png" alt=""></img></div>
         </div>
-
         <div class="nav">
             <div class="menu">
             <ul>
@@ -28,8 +25,9 @@
                 <li><a href="#" onclick="aktifitas()">Aktifitas</a></li>
                 <li><a href="#" onclick="statistik()">Statistik</a></li>
                 <li><a href="#" onclick="dokumen()">Dokumen</a></li>
-                <li><a class="sett" href="#" id="settings" onclick="settings()">Settings</a></li>
-                <li><a class="signo" href="#" id="signout" onclick="signout()"singout>Sign Out</a></li>
+                <li><a id="playbacksound" href="#" onclick="onbacksound()">Music</a></li>
+                <li><a id="reload" class="sett" href="#" id="settings" onclick="settings()">Settings</a></li>
+                <li><a id="exit" class="signo" href="#" id="signout" onclick="signout()"singout>Sign Out</a></li>
             </ul>
             </div>
         </div>
@@ -41,7 +39,7 @@
         </div>
 
 
-        <div class="section1" id="aktifi">
+        <div class="section1" id="progres-kelas-content">
             <h3>Progres Kelas</h3>
             <div class="progres">
                 <h6>Matakuliah A</h6>
@@ -63,9 +61,7 @@
                 <p>10 Pendaftar</p>
             </div>
         </div>
-
-
-        <div class="section2" id="aktifi1">
+        <div class="section2" id="aktifitas-selanjutnya-content">
             <h3>Aktifitas Selanjutnya</h3>
              <div class="progres">
                 <h6>Perkuliahan Daring 1</h6>
@@ -87,9 +83,7 @@
                 <p>Kamis, 15 April 2025</p>
             </div>
         </div>
-
-
-        <div class="footer" id="lmpr">
+        <div class="footer" id="lampiran-content">
             <h3>Lampiran</h3>
             <div class="lampiran">
                 <p>
@@ -102,16 +96,13 @@
                     <span id="lampir">Lampiran Dokumen 2</span> - Matakuliah B | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
                 </p>
             </div>
-
             <div class="lampiran">
                 <p>
                     <span id="lampir">Lampiran Dokumen 3</span> - Matakuliah C | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
                 </p>
             </div>
         </div>
-    </main> 
-
-    
+    </main>   
     <script src="script.js"></script>
 </body>
 </html>
