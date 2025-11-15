@@ -6,13 +6,13 @@
     <title>Royal Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="bg-color">
     <main>
         <div class="header">
-            <div class="dashboard"><h1>Royal Dashboard</h1></div>
+            <div class="dashboard" id="RD"><h1>Royal Dashboard</h1></div>
             <div class="input"><input type="text" placeholder="Cari Kelas, Dokumen, Aktifitas dll..."></div>
         </div>
-        <div class="main">
+        <div id="main-color" class="main">
             <div class="nama"><h1 id="selamat">Selamat Datang, Nama Mahasiswa Kelas SI-3X</h1><p>Kamu memiliki Statistik, 3 Proges Kelas, 4 Ktifitas Selanjutnya dan 3 Lampiran Dokumen yang ada pada aplikasi ini.</p></div>
             <div class="gambar"><img src="Assets/avatar.png" alt=""></img></div>
         </div>
@@ -26,21 +26,21 @@
                 <li><a href="#" onclick="statistik()">Statistik</a></li>
                 <li><a href="#" onclick="dokumen()">Dokumen</a></li>
                 <li><a id="playbacksound" href="#" onclick="onbacksound()">Music</a></li>
-                <li><a id="reload" class="sett" href="#" id="settings" onclick="settings()">Settings</a></li>
-                <li><a id="exit" class="signo" href="#" id="signout" onclick="signout()"signout>Sign Out</a></li>
+                <li><a id="reload" class="sett" href="#" onclick="settings()">Settings</a></li>
+                <li><a id="signout" class="signo" href="#" onclick="signout()"signout>Sign Out</a></li>
             </ul>
             </div>
         </div>
 
 
         <div class="aside" id="aside">
-            <div><h3>Statistik Mahasiswa</h3></div>
+            <div><h3 id="SM">Statistik Mahasiswa</h3></div>
             <div class="gambar-statistik"><img src="Assets/Chart.svg" alt=""></div>
         </div>
 
 
         <div class="section1" id="progres-kelas-content">
-            <h3>Progres Kelas</h3>
+            <h3 id="PK">Progres Kelas</h3>
             <div class="progres">
                 <h6>Matakuliah A</h6>
                 <p>78 Pendaftar</p>
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="section2" id="aktifitas-selanjutnya-content">
-            <h3>Aktifitas Selanjutnya</h3>
+            <h3 id="AS">Aktifitas Selanjutnya</h3>
              <div class="progres">
                 <h6>Perkuliahan Daring 1</h6>
                 <p>Senin, 15 Januari 2025</p>
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="footer" id="lampiran-content">
-            <h3>Lampiran</h3>
+            <h3 id="Lcolor">Lampiran</h3>
             <div class="lampiran">
                 <p>
                     <span id="lampir">Lampiran Dokumen 1</span> - Matakuliah A | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>

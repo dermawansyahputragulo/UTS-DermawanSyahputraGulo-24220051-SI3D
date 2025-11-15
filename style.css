@@ -154,7 +154,6 @@ main{
     text-align: center;
     padding: 20px;
     margin-top: 15px;
- 
 }
 
 .menu ul li .signo {
@@ -177,6 +176,8 @@ main{
 
 .menu ul li a:hover{
     background-color: #0e3b72;
+    border: 2px white solid;
+    box-shadow: 0 0 10px white;
 }
 
 /* aside */
