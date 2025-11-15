@@ -62,10 +62,14 @@ document.getElementById("signout").addEventListener("click", function () {
 function home(){
     document.getElementById('selamat').innerHTML="Selamat Datang, Nama Mahasiswa<br>Kelas SI-3X";
     document.getElementById('main-color').style.backgroundColor="#0e3b72";
+    document.getElementById('lampiran-content').style.backgroundColor="white";
     document.getElementById('progres-kelas-content').style.backgroundColor="white";
     document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
     document.getElementById('aside').style.backgroundColor="white";
-    document.getElementById('lampiran-content').style.backgroundColor="white";
+    document.getElementById('PK').style.color="black";
+    document.getElementById('AS').style.color="black";
+    document.getElementById('SM').style.color="black";
+    document.getElementById('Lcolor').style.color="black";
 }
 
 function mahasiswa () {
@@ -130,4 +134,5 @@ function dokumen(){
     document.getElementById('progres-kelas-content').style.backgroundColor="white";
     document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
     document.getElementById('aside').style.backgroundColor="white";
+
 }
