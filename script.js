@@ -267,25 +267,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 1200);
 });
-
-// ===== SIMPLE OFFLINE CACHE =====
-
-const cacheName = "royal-dashboard-cache-v1";
-const assetsToCache = [
-    "Assets/backsound.ogg",
-    "Assets/avatar.png",
-    "Assets/Chart.svg",
-    "style.css",
-    "script.js",
-    "index.html"
-];
-
-function cacheAssets() {
-    if ("caches" in window) {
-        caches.open(cacheName).then(cache => {
-            cache.addAll(assetsToCache).catch(() => {});
-        });
-    }
-}
-
-document.addEventListener("DOMContentLoaded", cacheAssets);
