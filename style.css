@@ -12,6 +12,18 @@ body{
     zoom: 100%;
 }
 
+/* tambahan class baru untuk elemen lampiran */
+.lampir-text {
+    font-weight: bold;
+    color: #000;
+}
+
+.dokumen-link {
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 15px;
+    cursor: pointer;
+}
 
 main{
     display: grid;
@@ -79,9 +91,8 @@ main{
 }
 
 .dashboard h1 {
-    font-size: 20px bold;
+    font-size: 30px;
     color: #325987;
-
 }
 
 .input input {
@@ -125,8 +136,8 @@ main{
     margin-top: 20px;
 }
 .gambar img { 
-    width: 80px;
-    border-radius: 40px;
+    width: 100px;
+    border-radius: 50px;
     border: 3px white solid;
 }
 
@@ -176,8 +187,8 @@ main{
 
 .menu ul li a:hover{
     background-color: #0e3b72;
-    border: 2px white solid;
-    box-shadow: 0 0 10px white;
+    border: 2px #0fe3ff solid;
+    box-shadow: 0 0 10px #0fe3ff;
 }
 
 /* aside */
@@ -186,7 +197,6 @@ main{
 }
 
 .aside img{
-    padding: 10px;
     margin: 30px;
     width: 400px;
 }

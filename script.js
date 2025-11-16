@@ -1,138 +1,261 @@
-
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+// Helper untuk set style lebih cepat
+function setStyles(el, styles) {
+    Object.assign(el.style, styles);
 }
 
-let satukaliAlert = false;
+// Grup elemen yang sering dipakai
+const bg     = document.getElementById("bg-color");
+const rd    = document.getElementById("RD");
+const nav    = document.getElementById("nav-color");
+const input    = document.getElementById("input-color");
+const main   = document.getElementById("main-color");
+const aside  = document.getElementById("aside");
+const progres = document.getElementById("progres-kelas-content");
+const aktif  = document.getElementById("aktifitas-selanjutnya-content");
+const lampiran = document.getElementById("lampiran-content");
 
-document.getElementById("playbacksound").addEventListener("click", function (e) {
-  e.preventDefault();
+const selamat = document.getElementById("selamat");
+const SM = document.getElementById("SM");
+const PK = document.getElementById("PK");
+const AS = document.getElementById("AS");
+const Lcolor = document.getElementById("Lcolor");
 
-  if (!satukaliAlert) {
-    alert("Klik 1x untuk play backsound, \ndan klik 1x lagi untuk stop backsound:D");
-    satukaliAlert = true;
-  }
-});
-
+// Audio backsound
 const audio = new Audio("Assets/backsound.ogg");
 audio.preload = "auto";
 let isPlaying = false;
 
-audio.load();
+// Alert musik hanya 1x
+let alertShown = false;
 
-function onbacksound() { 
-  document.getElementById('progres-kelas-content').style.backgroundColor="white";
-  document.getElementById('lampiran-content').style.backgroundColor="white";
-    document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
-    document.getElementById('aside').style.backgroundColor="white";
-    document.getElementById('lampiran-content').style.backgroundColor="white";
-    document.getElementById('SM').style.color="black";
-    document.getElementById('PK').style.color="black";
-    document.getElementById('AS').style.color="black";
-    document.getElementById('Lcolor').style.color="black";
-    document.getElementById('main-color').style.backgroundColor="#0052b4";
-    document.getElementById("playbacksound").addEventListener("click", (e) => {
+// Theme Manager
+function clearTheme() {
+    // Reset warna default
+    setStyles(main, { backgroundColor: "#0052b4", border: "", boxShadow: "" });
+    setStyles(aside, { backgroundColor: "white", border: "", boxShadow: "" });
+    setStyles(progres, { backgroundColor: "white", border: "", boxShadow: "" });
+    setStyles(aktif, { backgroundColor: "white", border: "", boxShadow: "" });
+    setStyles(lampiran, { backgroundColor: "white", border: "", boxShadow: "" });
+
+    SM.style.color = "black";
+    PK.style.color = "black";
+    AS.style.color = "black";
+    Lcolor.style.color = "black";
+}
+
+document.querySelectorAll(".nav").forEach(link => {
+    link.addEventListener("mouseenter", () => {
+        link.style.backgroundColor = "#0e3b72";
+        link.style.border = "2px solid #0fe3ff";
+        link.style.boxShadow = "0 0 10px #0fe3ff";
+        link.style.transition = "0.2s";
+    });
+
+    link.addEventListener("mouseleave", () => {
+        link.style.backgroundColor = "";
+        link.style.border = "";
+        link.style.boxShadow = "";
+    });
+});
+
+// DARK MODE
+function activateDarkMode() {
+    // background utama
+    setStyles(bg, {
+        backgroundColor: "#0b1014"
+    });
+    
+    setStyles(rd, {
+            textShadow: "0 0 3px #0fe3ff"
+        });
+        
+    setStyles(input, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+    
+    setStyles(main, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+        
+    setStyles(nav, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+        
+    setStyles(aktif, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+    setStyles(progres, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+
+        PK.style.color = "white";
+        AS.style.color = "white";
+        
+        
+    setStyles(aside, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+        SM.style.color = "white";
+
+
+    setStyles(lampiran, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+        Lcolor.style.color = "white";
+
+}
+
+// Daftar tema
+const THEMES = {
+    home: () => {
+        selamat.innerHTML = "Selamat Datang, Nama Mahasiswa<br>Kelas OO-OO";
+        clearTheme();
+        setStyles(main, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+    },
+
+    mahasiswa: () => {
+        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo";
+        clearTheme();
+        setStyles(main, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+    },
+
+    kelas: () => {
+        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo Kelas SI-3D";
+        clearTheme();
+        setStyles(main, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+    },
+
+    aktifitas: () => {
+        clearTheme();
+        setStyles(aktif, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+        setStyles(progres, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+
+        PK.style.color = "white";
+        AS.style.color = "white";
+    },
+
+    statistik: () => {
+        clearTheme();
+        setStyles(aside, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+        SM.style.color = "white";
+    },
+
+    dokumen: () => {
+        clearTheme();
+        setStyles(lampiran, {
+            backgroundColor: "#0e3b72",
+            border: "2px solid #0fe3ff",
+            boxShadow: "0 0 10px #0fe3ff"
+        });
+        Lcolor.style.color = "white";
+    }
+};
+
+// Fungsi utama untuk terapkan tema
+function applyTheme(name) {
+    if (THEMES[name]) THEMES[name]();
+}
+
+// Event Listener Menu
+document.getElementById("menu-home").addEventListener("click", e => {
     e.preventDefault();
+    applyTheme("home");
+});
+
+document.getElementById("menu-mahasiswa").addEventListener("click", e => {
+    e.preventDefault();
+    applyTheme("mahasiswa");
+});
+
+document.getElementById("menu-kelas").addEventListener("click", e => {
+    e.preventDefault();
+    applyTheme("kelas");
+});
+
+document.getElementById("menu-aktifitas").addEventListener("click", e => {
+    e.preventDefault();
+    applyTheme("aktifitas");
+});
+
+document.getElementById("menu-statistik").addEventListener("click", e => {
+    e.preventDefault();
+    applyTheme("statistik");
+});
+
+document.getElementById("menu-dokumen").addEventListener("click", e => {
+    e.preventDefault();
+    applyTheme("dokumen");
+});
+
+// Music handler
+document.getElementById("playbacksound").addEventListener("click", e => {
+    e.preventDefault();
+    clearTheme();
+
+    if (!alertShown) {
+        alert("\n\n\nLana Del Rey - Salvatore.");
+        alertShown = true;
+    }
     if (!isPlaying) {
         audio.play();
         isPlaying = true;
-        setTimeout(function () {
-        document.getElementById('bg-color').style.backgroundColor="#0b1014";
-        document.getElementById('bg-color').style.border="2px white solid";
-        document.getElementById('bg-color').style.boxshadow="0 0 10px white";
-}, 2850);
     } else {
         audio.pause();
-        audio.currentTime = 0; 
+        audio.currentTime = 0;
         isPlaying = false;
         location.reload();
     }
-});
-}
-
-document.getElementById("reload").addEventListener("click", function () {
-  location.reload();
+    setTimeout(() => {
+    activateDarkMode();
+}, 2850);
 });
 
-document.getElementById("signout").addEventListener("click", function () {
-  window.close();
-  location.reload();
+// Reload
+document.getElementById("reload").addEventListener("click", e => {
+    e.preventDefault();
+    location.reload();
 });
 
-function home(){
-    document.getElementById('selamat').innerHTML="Selamat Datang, Nama Mahasiswa<br>Kelas SI-3X";
-    document.getElementById('main-color').style.backgroundColor="#0e3b72";
-    document.getElementById('lampiran-content').style.backgroundColor="white";
-    document.getElementById('progres-kelas-content').style.backgroundColor="white";
-    document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
-    document.getElementById('aside').style.backgroundColor="white";
-    document.getElementById('PK').style.color="black";
-    document.getElementById('AS').style.color="black";
-    document.getElementById('SM').style.color="black";
-    document.getElementById('Lcolor').style.color="black";
-}
-
-function mahasiswa () {
-    document.getElementById('selamat').innerHTML="Selamat Datang, Dermawan Syahputra Gulo";
-    document.getElementById('main-color').style.backgroundColor="#0e3b72";
-    document.getElementById('lampiran-content').style.backgroundColor="white";
-    document.getElementById('progres-kelas-content').style.backgroundColor="white";
-    document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
-    document.getElementById('aside').style.backgroundColor="white";
-    document.getElementById('PK').style.color="black";
-    document.getElementById('AS').style.color="black";
-    document.getElementById('SM').style.color="black";
-    document.getElementById('Lcolor').style.color="black";
-}
-
-function kelas() {
-    document.getElementById('selamat').innerHTML="Selamat Datang, Dermawan Syahputra Gulo Kelas SI-3D";
-    document.getElementById('main-color').style.backgroundColor="#0e3b72";
-    document.getElementById('lampiran-content').style.backgroundColor="white";
-    document.getElementById('progres-kelas-content').style.backgroundColor="white";
-    document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
-    document.getElementById('aside').style.backgroundColor="white";
-    document.getElementById('PK').style.color="black";
-    document.getElementById('AS').style.color="black";
-    document.getElementById('SM').style.color="black";
-    document.getElementById('Lcolor').style.color="black";
-}
-
-function aktifitas(){
-    document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="#0e3b72";
-    document.getElementById('progres-kelas-content').style.backgroundColor="#0e3b72";
-    document.getElementById('PK').style.color="white";
-    document.getElementById('AS').style.color="white";
-    document.getElementById('SM').style.color="black";
-    document.getElementById('Lcolor').style.color="black";
-    document.getElementById('main-color').style.backgroundColor="#0052b4";
-    document.getElementById('lampiran-content').style.color="black";
-    document.getElementById('aside').style.backgroundColor="white";
-    document.getElementById('lampiran-content').style.backgroundColor="white";
-}
-
-function statistik(){
-    document.getElementById('aside').style.backgroundColor="#0e3b72";
-    document.getElementById('SM').style.color="white";
-    document.getElementById('PK').style.color="black";
-    document.getElementById('AS').style.color="black";
-    document.getElementById('Lcolor').style.color="black";
-    document.getElementById('main-color').style.backgroundColor="#0052b4";
-    document.getElementById('lampiran-content').style.backgroundColor="white";
-    document.getElementById('progres-kelas-content').style.backgroundColor="white";
-    document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
-    
-}
-
-function dokumen(){
-    document.getElementById('lampiran-content').style.backgroundColor="#0e3b72";
-    document.getElementById('Lcolor').style.color="white";
-    document.getElementById('SM').style.color="black";
-    document.getElementById('PK').style.color="black";
-    document.getElementById('AS').style.color="black";
-    document.getElementById('main-color').style.backgroundColor="#0052b4";
-    document.getElementById('progres-kelas-content').style.backgroundColor="white";
-    document.getElementById('aktifitas-selanjutnya-content').style.backgroundColor="white";
-    document.getElementById('aside').style.backgroundColor="white";
-
-}
+// Signout = reload saja (sesuai permintaan)
+document.getElementById("signout").addEventListener("click", e => {
+    e.preventDefault();
+    location.reload();
+});

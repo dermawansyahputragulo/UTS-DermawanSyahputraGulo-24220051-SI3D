@@ -9,100 +9,96 @@
 <body id="bg-color">
     <main>
         <div class="header">
-            <div class="dashboard" id="RD"><h1>Royal Dashboard</h1></div>
-            <div class="input"><input type="text" placeholder="Cari Kelas, Dokumen, Aktifitas dll..."></div>
-        </div>
-        <div id="main-color" class="main">
-            <div class="nama"><h1 id="selamat">Selamat Datang, Nama Mahasiswa Kelas SI-3X</h1><p>Kamu memiliki Statistik, 3 Proges Kelas, 4 Ktifitas Selanjutnya dan 3 Lampiran Dokumen yang ada pada aplikasi ini.</p></div>
-            <div class="gambar"><img src="Assets/avatar.png" alt=""></img></div>
-        </div>
-        <div class="nav">
-            <div class="menu">
-            <ul>
-                <li><a href="#" onclick="home()">Home</a></li>
-                <li><a href="#" onclick="mahasiswa()">Mahasiswa</a></li>
-                <li><a href="#" onclick="kelas()">Kelas</a></li>
-                <li><a href="#" onclick="aktifitas()">Aktifitas</a></li>
-                <li><a href="#" onclick="statistik()">Statistik</a></li>
-                <li><a href="#" onclick="dokumen()">Dokumen</a></li>
-                <li><a id="playbacksound" href="#" onclick="onbacksound()">Music</a></li>
-                <li><a id="reload" class="sett" href="#" onclick="settings()">Settings</a></li>
-                <li><a id="signout" class="signo" href="#" onclick="signout()"signout>Sign Out</a></li>
-            </ul>
+            <div class="dashboard"><h1 id="RD">Royal Dashboard</h1></div>
+            <div id="input-color" class="input">
+                <input type="text" placeholder="Cari Kelas, Dokumen, Aktifitas dll...">
             </div>
         </div>
 
-
-        <div class="aside" id="aside">
-            <div><h3 id="SM">Statistik Mahasiswa</h3></div>
-            <div class="gambar-statistik"><img src="Assets/Chart.svg" alt=""></div>
+        <div id="main-color" class="main">
+            <div class="nama">
+                <h1 id="selamat">Selamat Datang, Nama Mahasiswa Kelas OO-OO</h1>
+                <p>
+                    Kamu memiliki Statistik, 3 Proges Kelas,
+                    4 Ktifitas Selanjutnya dan 3 Lampiran Dokumen
+                    yang ada pada aplikasi ini.
+                </p>
+            </div>
+            <div class="gambar">
+                <img src="Assets/avatar.png" alt="">
+            </div>
         </div>
 
+        <div id="nav-color" class="nav">
+            <div class="menu">
+                <ul>
+                    <li><a href="#" id="menu-home">Home</a></li>
+                    <li><a href="#" id="menu-mahasiswa">Mahasiswa</a></li>
+                    <li><a href="#" id="menu-kelas">Kelas</a></li>
+                    <li><a href="#" id="menu-aktifitas">Aktifitas</a></li>
+                    <li><a href="#" id="menu-statistik">Statistik</a></li>
+                    <li><a href="#" id="menu-dokumen">Dokumen</a></li>
+                    <li><a href="#" id="playbacksound">Music</a></li>
+                    <li><a href="#" id="reload" class="sett">Settings</a></li>
+                    <li><a href="#" id="signout" class="signo">Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="aside" id="aside">
+            <h3 id="SM">Statistik Mahasiswa</h3>
+            <div class="gambar-statistik">
+                <img src="Assets/Chart.svg" alt="">
+            </div>
+        </div>
 
         <div class="section1" id="progres-kelas-content">
             <h3 id="PK">Progres Kelas</h3>
-            <div class="progres">
-                <h6>Matakuliah A</h6>
-                <p>78 Pendaftar</p>
-            </div>
 
-            <div class="progres">
-                <h6>Matakuliah B</h6>
-                <p>30 Pendaftar</p>
-            </div>
-
-            <div class="progres">
-                <h6>Matakuliah C</h6>
-                <p>40 Pendaftar</p>
-            </div>
-
-            <div class="progres">
-                <h6>Matakuliah D</h6>
-                <p>10 Pendaftar</p>
-            </div>
+            <div class="progres"><h6>Matakuliah A</h6><p>78 Pendaftar</p></div>
+            <div class="progres"><h6>Matakuliah B</h6><p>30 Pendaftar</p></div>
+            <div class="progres"><h6>Matakuliah C</h6><p>40 Pendaftar</p></div>
+            <div class="progres"><h6>Matakuliah D</h6><p>10 Pendaftar</p></div>
         </div>
+
         <div class="section2" id="aktifitas-selanjutnya-content">
             <h3 id="AS">Aktifitas Selanjutnya</h3>
-             <div class="progres">
-                <h6>Perkuliahan Daring 1</h6>
-                <p>Senin, 15 Januari 2025</p>
-            </div>
 
-            <div class="progres">
-                <h6>Perkuliahan Daring 1</h6>
-                <p>Selasa, 15 Februari 2025</p>
-            </div>
-
-            <div class="progres">
-                <h6>Perkuliahan Daring 1</h6>
-                <p>Rabu, 15 Maret 2025</p>
-            </div>
-
-            <div class="progres">
-                <h6>Perkuliahan Daring 1</h6>
-                <p>Kamis, 15 April 2025</p>
-            </div>
+            <div class="progres"><h6>Perkuliahan Daring 1</h6><p>Senin, 15 Januari 2025</p></div>
+            <div class="progres"><h6>Perkuliahan Daring 1</h6><p>Selasa, 15 Februari 2025</p></div>
+            <div class="progres"><h6>Perkuliahan Daring 1</h6><p>Rabu, 15 Maret 2025</p></div>
+            <div class="progres"><h6>Perkuliahan Daring 1</h6><p>Kamis, 15 April 2025</p></div>
         </div>
+
         <div class="footer" id="lampiran-content">
             <h3 id="Lcolor">Lampiran</h3>
+
             <div class="lampiran">
                 <p>
-                    <span id="lampir">Lampiran Dokumen 1</span> - Matakuliah A | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
+                    <span class="lampir-text">Lampiran Dokumen 1</span> -
+                    Matakuliah A | Tugas Bersama Perkuliahan Daring |
+                    <span class="dokumen-link">Lihat Dokumen</span>
                 </p>
             </div>
 
-            <div class="lampiran" >
-                <p>
-                    <span id="lampir">Lampiran Dokumen 2</span> - Matakuliah B | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
-                </p>
-            </div>
             <div class="lampiran">
                 <p>
-                    <span id="lampir">Lampiran Dokumen 3</span> - Matakuliah C | Tugas Bersama Perkuliahan Daring  | <span id="dokumen">Lihat Dokumen</span>
+                    <span class="lampir-text">Lampiran Dokumen 2</span> -
+                    Matakuliah B | Tugas Bersama Perkuliahan Daring |
+                    <span class="dokumen-link">Lihat Dokumen</span>
+                </p>
+            </div>
+
+            <div class="lampiran">
+                <p>
+                    <span class="lampir-text">Lampiran Dokumen 3</span> -
+                    Matakuliah C | Tugas Bersama Perkuliahan Daring |
+                    <span class="dokumen-link">Lihat Dokumen</span>
                 </p>
             </div>
         </div>
-    </main>   
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
