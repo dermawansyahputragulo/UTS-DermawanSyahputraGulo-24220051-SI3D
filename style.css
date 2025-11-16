@@ -9,7 +9,6 @@
 body{
     padding: 30px;
     background-color: #e8f3ff;
-    zoom: 100%;
 }
 
 /* tambahan class baru untuk elemen lampiran */
@@ -150,7 +149,7 @@ main{
 /* nav */
 
 .menu {
-    margin-top: 40px;
+    margin-top: 10px;
     font-weight: bold;
  
 }
@@ -254,4 +253,55 @@ main{
 
 #lampir{
     font-weight: bold;
+}
+
+/* Splash Screen */
+#splash {
+    position: fixed;
+    inset: 0;
+    background: #0b1014;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    color: white;
+    gap: 20px;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+#splash img {
+    width: 100px;
+    filter: drop-shadow(0 0 5px white);
+}
+
+#splash.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Loading Bar */
+.loading-bar {
+    width: 220px;
+    height: 10px;
+    background: #14212e;
+    border-radius: 10px;
+    border: 2px solid #0fe3ff;
+    overflow: hidden;
+    box-shadow: 0 0 10px #0fe3ff;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background: #0fe3ff;
+    box-shadow: 0 0 15px #0fe3ff;
+    animation: loadingAnim 1s linear forwards;
+}
+
+/* Animasi bar */
+@keyframes loadingAnim {
+    from { width: 0%; }
+    to   { width: 100%; }
 }

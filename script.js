@@ -25,9 +25,6 @@ const audio = new Audio("Assets/backsound.ogg");
 audio.preload = "auto";
 let isPlaying = false;
 
-// Alert musik hanya 1x
-let alertShown = false;
-
 // Theme Manager
 function clearTheme() {
     // Reset warna default
@@ -229,11 +226,7 @@ document.getElementById("menu-dokumen").addEventListener("click", e => {
 document.getElementById("playbacksound").addEventListener("click", e => {
     e.preventDefault();
     clearTheme();
-
-    if (!alertShown) {
-        alert("\n\n\nLana Del Rey - Salvatore.");
-        alertShown = true;
-    }
+    
     if (!isPlaying) {
         audio.play();
         isPlaying = true;
@@ -241,7 +234,6 @@ document.getElementById("playbacksound").addEventListener("click", e => {
         audio.pause();
         audio.currentTime = 0;
         isPlaying = false;
-        location.reload();
     }
     setTimeout(() => {
     activateDarkMode();
@@ -254,8 +246,46 @@ document.getElementById("reload").addEventListener("click", e => {
     location.reload();
 });
 
-// Signout = reload saja (sesuai permintaan)
+// Signout = reload saja
 document.getElementById("signout").addEventListener("click", e => {
     e.preventDefault();
     location.reload();
 });
+
+
+// Splash Screen with Loading Bar
+document.addEventListener("DOMContentLoaded", () => {
+    const splash = document.getElementById("splash");
+
+    // Durasi splash = 1.2 detik (1 detik animasi + sedikit jeda)
+    setTimeout(() => {
+        splash.classList.add("fade-out");
+
+        setTimeout(() => {
+            splash.remove();
+        }, 600);
+
+    }, 1200);
+});
+
+// ===== SIMPLE OFFLINE CACHE =====
+
+const cacheName = "royal-dashboard-cache-v1";
+const assetsToCache = [
+    "Assets/backsound.ogg",
+    "Assets/avatar.png",
+    "Assets/Chart.svg",
+    "style.css",
+    "script.js",
+    "index.html"
+];
+
+function cacheAssets() {
+    if ("caches" in window) {
+        caches.open(cacheName).then(cache => {
+            cache.addAll(assetsToCache).catch(() => {});
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", cacheAssets);
