@@ -9,6 +9,7 @@
 body{
     padding: 30px;
     background-color: #e8f3ff;
+    zoom: 90%;
 }
 
 /* tambahan class baru untuk elemen lampiran */
@@ -304,4 +305,5 @@ main{
 @keyframes loadingAnim {
     from { width: 0%; }
     to   { width: 100%; }
+
 }
