@@ -23,6 +23,7 @@ const Lcolor = document.getElementById("Lcolor");
 // Audio backsound
 const audio = new Audio("Assets/backsound.ogg");
 audio.preload = "auto";
+audio.loop = true;
 let isPlaying = false;
 
 // Theme Manager
@@ -116,6 +117,66 @@ function activateDarkMode() {
 
 }
 
+function nonactivateDarkMode() {
+    // background utama
+    setStyles(bg, {
+        backgroundColor: ""
+    });
+    
+    setStyles(rd, {
+            textShadow: ""
+        });
+        
+    setStyles(input, {
+            backgroundColor: "",
+            border: "",
+            boxShadow: ""
+        });
+    
+    setStyles(main, {
+            backgroundColor: "",
+            border: "",
+            boxShadow: ""
+        });
+        
+    setStyles(nav, {
+            backgroundColor: "",
+            border: "",
+            boxShadow: ""
+        });
+        
+    setStyles(aktif, {
+            backgroundColor: "",
+            border: "",
+            boxShadow: ""
+        });
+    setStyles(progres, {
+            backgroundColor: "",
+            border: "",
+            boxShadow: ""
+        });
+
+        PK.style.color = "";
+        AS.style.color = "";
+        
+        
+    setStyles(aside, {
+            backgroundColor: "",
+            border: "",
+            boxShadow: ""
+        });
+        SM.style.color = "";
+
+
+    setStyles(lampiran, {
+            backgroundColor: "",
+            border: "",
+            boxShadow: ""
+        });
+        Lcolor.style.color = "";
+
+}
+
 // Daftar tema
 const THEMES = {
     home: () => {
@@ -129,7 +190,7 @@ const THEMES = {
     },
 
     mahasiswa: () => {
-        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo";
+        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo Kelas OO-OO";
         clearTheme();
         setStyles(main, {
             backgroundColor: "#0e3b72",
@@ -230,20 +291,21 @@ document.getElementById("playbacksound").addEventListener("click", e => {
     if (!isPlaying) {
         audio.play();
         isPlaying = true;
+        setTimeout(() => {
+    activateDarkMode();
+}, 2850);
     } else {
         audio.pause();
         audio.currentTime = 0;
         isPlaying = false;
+        nonactivateDarkMode();
     }
-    setTimeout(() => {
-    activateDarkMode();
-}, 2850);
 });
 
-// Reload
-document.getElementById("reload").addEventListener("click", e => {
+// menu settings -> pergi ke halaman maintenance
+document.getElementById("settings").addEventListener("click", e => {
     e.preventDefault();
-    location.reload();
+    window.location.href = "maintenance.html";
 });
 
 // Signout = reload saja
@@ -257,13 +319,18 @@ document.getElementById("signout").addEventListener("click", e => {
 document.addEventListener("DOMContentLoaded", () => {
     const splash = document.getElementById("splash");
 
-    // Durasi splash = 1.2 detik (1 detik animasi + sedikit jeda)
+    if (sessionStorage.getItem("skipSplash") === "yes") {
+        splash.remove();
+        sessionStorage.removeItem("skipSplash");
+        return;
+    }
+
     setTimeout(() => {
         splash.classList.add("fade-out");
-
-        setTimeout(() => {
-            splash.remove();
-        }, 600);
-
+        setTimeout(() => splash.remove(), 600);
     }, 1200);
 });
+
+if (window.location.search.includes("skip=1")) {
+    sessionStorage.setItem("skipSplash", "yes");
+}
