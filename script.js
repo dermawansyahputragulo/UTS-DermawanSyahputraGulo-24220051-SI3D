@@ -190,7 +190,7 @@ const THEMES = {
     },
 
     mahasiswa: () => {
-        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo Kelas OO-OO";
+        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo<br>Kelas OO-OO";
         clearTheme();
         setStyles(main, {
             backgroundColor: "#0e3b72",
@@ -200,7 +200,7 @@ const THEMES = {
     },
 
     kelas: () => {
-        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo Kelas SI-3D";
+        selamat.innerHTML = "Selamat Datang, Dermawan Syahputra Gulo<br>Kelas SI-3D";
         clearTheme();
         setStyles(main, {
             backgroundColor: "#0e3b72",
@@ -333,4 +333,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (window.location.search.includes("skip=1")) {
     sessionStorage.setItem("skipSplash", "yes");
+
 }
